@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:  'Titillium Web', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #4A98F7;
+  }
+  .container{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    
+  }
+  section{
+    background: rgba(255, 255, 255, .4);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+    border-radius: 7px;
+    color:#fff;
+    
+  }
+  .tools-board{
+    width: 210px;
+    padding: 15px 22px 0;
+  }
+  .tools-board .row{
+    margin-bottom: 20px;
+  }
+  .row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+  }
+  .row .options .option{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .option:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+  }
+  
+  .option :where(span, label){
+    color: #000;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+  .option:is(:hover, .active) :where(span, label){
+    color: #0335fc;
+  }
+  .option #fill-color{
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+  }
+  #fill-color:checked ~ label{
+    color: #0335fc;
+  }
+  .option #size-slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+  }
+  .colors .options{
+    display: flex;
+    justify-content: space-between;
+  }
+  .colors .option{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+  }
+  .colors .option:nth-child(1){
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+  }
+  .colors .option:nth-child(2){
+    background-color: #000;
+  }
+  .colors .option:nth-child(3){
+    background-color: #E02020;
+  }
+  .colors .option:nth-child(4){
+    background-color: #6DD400;
+  }
+  .colors .option:nth-child(5){
+    background-color: #4A98F7;
+  }
+  .colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+  }
+  .colors .option:first-child.selected::before{
+    border-color: #ccc;
+  }
+
+  /*back colors*/
+  .backColors .options{
+    display: flex;
+    justify-content: space-between;
+  }
+  .backColors .option{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+  }
+  .backColors .option:nth-child(1){
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+  }
+  .backColors .option:nth-child(2){
+    background-color: #000;
+  }
+  .backColors .option:nth-child(3){
+    background-color: #E02020;
+  }
+  .backColors .option:nth-child(4){
+    background-color: #6DD400;
+  }
+  .backColors .option:nth-child(5){
+    background-color: #4A98F7;
+  }
+  .backColors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+  }
+  .backColors .option:first-child.selected::before{
+    border-color: #ccc;
+  }/*end back colors*/
+
+  .option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+  }
+  .option #backcolor-picker{
+    opacity: 0;
+    cursor: pointer;
+  }
+  .buttons button{
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: 0.9rem;
+    margin-bottom: 13px;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .buttons .clear-canvas{
+    color: #000;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+  }
+  .clear-canvas:hover{
+    color: #fff;
+    background: #000;
+  }
+  .buttons .save-img{
+    background: #4A98F7;
+    border: 1px solid #4A98F7;
+  }
+  .buttons .save-img:hover{
+    background:#0335fc;
+  }
+  .drawing-board{
+    flex: 1;
+    overflow: hidden;
+    cursor:default;
+  }
+  .drawing-board canvas{
+    width: 100%;
+    height: 100%;
+    border:2px solid #000;
+    border-radius: 8px;
+  }
